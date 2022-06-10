@@ -1,9 +1,7 @@
-﻿using System;
-using System.Diagnostics;
+﻿using ClosedXML.Excel;
+using System;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-using ClosedXML.Excel;
 
 namespace FA29
 {
@@ -81,8 +79,8 @@ namespace FA29
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            
-             if(TxtDesc.Text != "" | TxtQtd.Text != "" | TxtValueUnit.Text != "" | TxtAppPrev.Text != "")
+
+            if (TxtDesc.Text != "" && TxtQtd.Text != "" && TxtValueUnit.Text != "" && TxtAppPrev.Text != "")
             {
                 Controler.AddLine(ws, TxtDesc.Text, TxtQtd.Text, TxtValueUnit.Text, TxtAppPrev.Text);
                 TxtDesc.Text = "";
@@ -102,9 +100,9 @@ namespace FA29
         {
             SaveFileDialog sfd = new SaveFileDialog();
 
-            if (TxtDestinatario.Text != "" | TxtGestor.Text != "" | TxtFilCnpj.Text != "" | TxtNumberFa.Text != "")
+            if (TxtDestinatario.Text != "" && TxtGestor.Text != "" && TxtFilCnpj.Text != "" && TxtNumberFa.Text != "")
             {
-                Controler.CreateArchive(ws, TxtDestinatario.Text, TxtGestor.Text, TxtFilCnpj.Text, TxtNumberFa.Text);
+                Controler.CreateArchive(ws, TxtDestinatario.Text, TxtGestor.Text, TxtFilCnpj.Text, TxtNumberFa.Text, DatePick.Text);
                 TxtDestinatario.Text = "";
                 TxtFilCnpj.Text = "";
                 TxtNumberFa.Text = "";
@@ -121,7 +119,7 @@ namespace FA29
                 MessageBox.Show("Algum dos campos está vazio");
             }
 
-            
+
         }
     }
 }

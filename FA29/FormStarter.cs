@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
-using ClosedXML;
+
 
 namespace FA29
 {
     public partial class FormStarter : Form
     {
+
         public FormStarter()
         {
             InitializeComponent();
-            
         }
 
         private void BtnCNPJ_Click(object sender, EventArgs e)
@@ -22,7 +22,6 @@ namespace FA29
         {
             Form1 Content = new Form1(false);
             Content.ShowDialog();
-            
         }
     }
 }
