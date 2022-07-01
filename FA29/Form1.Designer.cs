@@ -49,7 +49,11 @@ namespace FA29
             this.BtnCreate = new System.Windows.Forms.Button();
             this.TxtAppPrev = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +79,7 @@ namespace FA29
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(297, 353);
+            this.label2.Location = new System.Drawing.Point(183, 353);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 101;
@@ -84,7 +88,7 @@ namespace FA29
             // TxtDestinatario
             // 
             this.TxtDestinatario.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.TxtDestinatario.Location = new System.Drawing.Point(273, 369);
+            this.TxtDestinatario.Location = new System.Drawing.Point(159, 369);
             this.TxtDestinatario.Name = "TxtDestinatario";
             this.TxtDestinatario.Size = new System.Drawing.Size(113, 20);
             this.TxtDestinatario.TabIndex = 9;
@@ -101,7 +105,7 @@ namespace FA29
             // 
             this.LabelDate.AutoSize = true;
             this.LabelDate.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.LabelDate.Location = new System.Drawing.Point(506, 29);
+            this.LabelDate.Location = new System.Drawing.Point(756, 32);
             this.LabelDate.Name = "LabelDate";
             this.LabelDate.Size = new System.Drawing.Size(91, 13);
             this.LabelDate.TabIndex = 104;
@@ -110,7 +114,7 @@ namespace FA29
             // DatePick
             // 
             this.DatePick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DatePick.Location = new System.Drawing.Point(509, 45);
+            this.DatePick.Location = new System.Drawing.Point(759, 48);
             this.DatePick.Name = "DatePick";
             this.DatePick.Size = new System.Drawing.Size(103, 20);
             this.DatePick.TabIndex = 10;
@@ -124,7 +128,7 @@ namespace FA29
             this.BtnAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(80)))), ((int)(((byte)(195)))));
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnAdd.Location = new System.Drawing.Point(511, 221);
+            this.BtnAdd.Location = new System.Drawing.Point(487, 220);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(75, 23);
             this.BtnAdd.TabIndex = 6;
@@ -215,7 +219,7 @@ namespace FA29
             this.BtnCreate.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(80)))), ((int)(((byte)(195)))));
             this.BtnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCreate.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnCreate.Location = new System.Drawing.Point(495, 382);
+            this.BtnCreate.Location = new System.Drawing.Point(745, 387);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(117, 46);
             this.BtnCreate.TabIndex = 11;
@@ -228,7 +232,7 @@ namespace FA29
             this.TxtAppPrev.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.TxtAppPrev.Location = new System.Drawing.Point(222, 67);
             this.TxtAppPrev.Name = "TxtAppPrev";
-            this.TxtAppPrev.Size = new System.Drawing.Size(364, 124);
+            this.TxtAppPrev.Size = new System.Drawing.Size(340, 124);
             this.TxtAppPrev.TabIndex = 5;
             this.TxtAppPrev.Text = "";
             // 
@@ -248,8 +252,30 @@ namespace FA29
             this.panel1.Controls.Add(this.TxtValueUnit);
             this.panel1.Location = new System.Drawing.Point(11, 71);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(601, 270);
+            this.panel1.Size = new System.Drawing.Size(611, 268);
             this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(628, 71);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(234, 268);
+            this.panel2.TabIndex = 23;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(234, 268);
+            this.dataGridView1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -257,7 +283,8 @@ namespace FA29
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.ClientSize = new System.Drawing.Size(624, 450);
+            this.ClientSize = new System.Drawing.Size(874, 450);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.DatePick);
@@ -269,13 +296,15 @@ namespace FA29
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(640, 489);
-            this.MinimumSize = new System.Drawing.Size(640, 489);
+            this.MaximumSize = new System.Drawing.Size(890, 489);
+            this.MinimumSize = new System.Drawing.Size(890, 489);
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "FA29 CREATOR";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,6 +334,8 @@ namespace FA29
         private System.Windows.Forms.TextBox TxtGestor;
         private System.Windows.Forms.RichTextBox TxtAppPrev;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

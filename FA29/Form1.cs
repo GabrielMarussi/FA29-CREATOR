@@ -7,6 +7,7 @@ namespace FA29
 {
     public partial class Form1 : Form
     {
+        private readonly bool Cnpj;
         private int ItemNum = 2;
 
         private readonly IXLWorkbook wb;
@@ -14,6 +15,7 @@ namespace FA29
 
         public Form1(bool Cnpj)
         {
+            this.Cnpj = Cnpj;
 
             wb = new XLWorkbook();
             ws = wb.Worksheets.Add("Plan1");
@@ -29,46 +31,9 @@ namespace FA29
             };
 
 
-            if (Cnpj)
-            {
-                lblFilCnpj.Text = "CNPJ";
-                Controls.Add(lblFilCnpj);
-            }
-            else
-            {
+            lblFilCnpj.Text = Cnpj ? lblFilCnpj.Text = "CNPJ" : lblFilCnpj.Text = "Filial";
 
-
-
-                lblGestor = new Label
-                {
-                    AutoSize = true,
-                    ForeColor = System.Drawing.SystemColors.ControlLight,
-                    Location = new System.Drawing.Point(186, 353),
-                    Name = "lblGestor",
-                    Size = new System.Drawing.Size(38, 13),
-                    TabIndex = 29,
-                    Text = "Gestor",
-                };
-
-
-                TxtGestor = new TextBox
-                {
-                    BackColor = System.Drawing.SystemColors.ScrollBar,
-                    Location = new System.Drawing.Point(153, 369),
-                    Name = "TxtGestor",
-                    Size = new System.Drawing.Size(106, 20),
-                    TabIndex = 8,
-                    Text = "Gestor Contrato",
-                };
-
-
-                lblFilCnpj.Text = "Filial";
-
-                Controls.Add(lblFilCnpj);
-                Controls.Add(lblGestor);
-                Controls.Add(TxtGestor);
-
-            }
+            Controls.Add(lblFilCnpj); ;
             #endregion
 
             InitializeComponent();
@@ -88,7 +53,6 @@ namespace FA29
                 TxtValueUnit.Text = "";
                 TxtAppPrev.Text = "";
                 ItemNumber.Text = "Item " + ItemNum++;
-                ItemNum = 1;
             }
             else
             {
@@ -100,9 +64,9 @@ namespace FA29
         {
             SaveFileDialog sfd = new SaveFileDialog();
 
-            if (TxtDestinatario.Text != "" && TxtGestor.Text != "" && TxtFilCnpj.Text != "" && TxtNumberFa.Text != "")
+            if (TxtDestinatario.Text != "" && TxtFilCnpj.Text != "" && TxtNumberFa.Text != "")
             {
-                Controler.CreateArchive(ws, TxtDestinatario.Text, TxtGestor.Text, TxtFilCnpj.Text, TxtNumberFa.Text, DatePick.Text);
+                Controler.CreateArchive(Cnpj,ws, TxtDestinatario.Text, TxtFilCnpj.Text, TxtNumberFa.Text, DatePick.Text);
                 TxtDestinatario.Text = "";
                 TxtFilCnpj.Text = "";
                 TxtNumberFa.Text = "";
